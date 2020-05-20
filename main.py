@@ -109,11 +109,10 @@ def realtime_test(model):
                         if COUNTER ==EYE_AR_CONSEC_FRAMES:
                             noses_point = []
                             chars_img.append(write_image)
-                            #try:
-                                
-                            chars_char.append(predict_letter(write_image,expand,c_w,c_h,model))
-                            #except:
-                            #    chars_char.append('-')
+                            try:
+                                chars_char.append(predict_letter(write_image,expand,c_w,c_h,model))
+                            except:
+                                chars_char.append('-')
                             
                         
                         #if not ALARM_ON:
@@ -157,11 +156,6 @@ def realtime_test(model):
         if cv.waitKey(25) & 0xFF == ord('q'):
             cv.destroyAllWindows()
             return print(''.join(chars_char))
-
-
-characters = ['O','I','2','3','A','S','G','T','8','9',
-                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
-                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 
 word = realtime_test(model)
