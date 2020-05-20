@@ -1,4 +1,4 @@
-# writing_nose
+# The Writing Nose
 
 Using a well known NN trainned on EMNIST dataset + OpenCV, we are able to use our nose to write in front of your laptop!
 To try it, first, you need to install all the requirements packages, and then run
